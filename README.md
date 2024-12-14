@@ -16,7 +16,7 @@ ping google.com  # Check internet connectivity
 
 # Setup SSH
 passwd # set a password to allow SSH
-ipconfig # Show ip for SSH
+ip addr # Show ip for SSH
 ```
 
 ## Disk Partitions
