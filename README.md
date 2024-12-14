@@ -5,9 +5,6 @@ Use this guide at your own risk. I am not responsible for any damage to your har
 
 SSH is recommended for this install to copy paste some of the longer commands.
 
-Tags:
-#minimal #archlinux #arch #swapfile #install #arch #linux #guide #installation #GRUB #laptop #wifi #bluetooth #dual-boot #AUR #Intel #AMD #SSH #paru 
-
 ```shell
 # Connect to WiFi
 iwctl
