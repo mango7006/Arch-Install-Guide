@@ -1,4 +1,5 @@
-Arch Linux Installation Guide (archISO 2024.12.01)
+# Arch Linux Installation Guide
+
 This guide details the installation of Arch Linux for a minimal dual-boot system, serving as a foundation for adding your preferred applications, desktop environments, or window managers. It is written to my personal preferences and assumes basic Linux knowledge and an already acquired install medium booted and ready to type.
 
 Use this guide at your own risk. I am not responsible for any damage to your hardware, software, or data. The installation includes basic applications and security features.
