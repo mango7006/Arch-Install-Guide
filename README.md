@@ -197,6 +197,7 @@ sudo vim /etc/ssh/sshd_config
 # Change its value to 'no'
 
 # To allow ssh in ufw
+sudo ufw enable
 sudo ufw allow ssh
 
 # Apply the changes
