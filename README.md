@@ -6,20 +6,20 @@ Use this guide at your own risk. I am not responsible for any damage to your har
 
 SSH is recommended for this install to copy paste some of the longer commands.
 
+## Wifi connection and SSH setup
 ```shell
 # Connect to WiFi
 iwctl
 station wlan0 connect <wifi>  # Replace <wifi> with your WiFi SSID
 exit
 ping google.com  # Check internet connectivity
-```
 
-```shell
 # Setup SSH
 passwd # set a password to allow SSH
 ipconfig # 
 ```
 
+## Disk Partitions
 ```shell
 # Check disk layout
 lsblk  # View all block devices and partitions
@@ -43,6 +43,7 @@ mount -m /dev/nvme0n1p<X> /mnt/boot  # Mount EFI partition
 lsblk  # Verify mounted partitions
 ```
 
+## Installing system
 ```shell
 # Install essential packages
 pacstrap -K /mnt bluez bluez-utils base base-devel brightnessctl btop curl dosfstools efibootmgr fastfetch ffmpeg fuse3 git grub linux linux-firmware linux-headers man man-db mtools networkmanager openssh os-prober pacman-contrib pipewire pipewire-audio pipewire-pulse reflector sudo ufw wireplumber vim yt-dlp
@@ -53,6 +54,7 @@ pacstrap -K /mnt bluez bluez-utils base base-devel brightnessctl btop curl dosfs
 pavucontrol blueman blueman-applet feh vlc nm-connection-editor network-manager-applet
 ```
 
+## Fstab and Chroot
 ```shell
 # Generate filesystem table
 genfstab -U /mnt >> /mnt/etc/fstab  # Save the filesystem table to /etc/fstab
@@ -90,6 +92,7 @@ sudo pacman -Syu  # Update packages
 exit
 ```
 
+## Timezone setup
 ```shell
 # Set timezone
 ln -sf /usr/share/zoneinfo/'<Region/City>' /etc/localtime  # Replace '<Region/City>' with your timezone
@@ -98,6 +101,7 @@ timedatectl list-timezones
 hwclock --systohc  # Sync hardware clock
 ```
 
+## Locale Setup
 ```shell
 # Configure locale
 vim /etc/locale.gen
@@ -113,12 +117,14 @@ echo 'LANG=en_US.UTF-8' >> /etc/locale.conf  # Use your chosen locale
 echo '<hostname>' >> /etc/hostname  # Replace <hostname> with your computer's name
 ```
 
+## GRUB Bootloader setup
 ```shell
 # Install GRUB bootloader
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg  # Generate GRUB configuration
 ```
 
+## Enable services on startup
 ```shell
 # Enable essential services
 systemctl enable bluetooth.service  # Enable Bluetooth
@@ -128,13 +134,15 @@ systemctl enable ufw.service  # Enable firewall
 systemctl enable systemd-timesyncd.service # Enable timesync
 ```
 
+## Unmount and shutdown
 ```shell
 # Exit chroot and unmount
 exit  # Leave the chroot environment
 umount -lR /mnt  # Unmount all partitions
 shutdown now  # Shutdown the system
 ```
-
+# After Installation
+## Wifi connection
 ```shell
 # Connect to WiFi and update system after reboot
 nmcli dev wifi connect <wifi> password '<password>'  # Replace with your WiFi details
@@ -142,6 +150,7 @@ ping google.com  # Verify connectivity
 sudo pacman -Syu  # Update system
 ```
 
+## GRUB dualboot setup
 ```shell
 # Configure GRUB for dual-boot with Windows
 sudo vim /etc/default/grub
@@ -152,6 +161,7 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg  # Update GRUB configuration
 sudo reboot now  # Reboot system
 ```
 
+## AUR helper install
 ```shell
 # Install an AUR helper (paru in this case)
 git clone https://aur.archlinux.org/paru.git
@@ -164,6 +174,7 @@ rustup default stable
 makepkg -si
 ```
 
+## Pacman mirrors and config
 ```shell
 # Optimize Arch mirrors and configure pacman
 sudo reflector --verbose -l 150 -n 20 -p http --sort rate --save /etc/pacman.d/mirrorlist
@@ -177,6 +188,7 @@ sudo vim /etc/pacman.conf
 'Color'
 ```
 
+## SSH
 ```shell
 # Secure SSH configuration
 sudo vim /etc/ssh/sshd_config
@@ -197,6 +209,7 @@ Rewrite guide for encryption with LUKS
 Make after install guide
 Make install script based on this guide
 
+## DWM install
 ```shell
 # Install DWM
 mkdir ~/suckless
