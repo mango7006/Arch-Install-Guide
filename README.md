@@ -220,4 +220,7 @@ git clone https://git.suckless.org/st
 git clone https://git.suckless.org/dmenu
 
 sudo pacman -Syu xorg-server xorg-xinit libx11 libxinerama libxft webkit2gtk
+# Use the following command for building
+make clean && make && sudo make install
+
 ```
