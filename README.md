@@ -209,20 +209,3 @@ Add section for NVIDIA drivers install and management
 Rewrite guide for encryption with LUKS
 Make after install guide
 Make install script based on this guide
-
-## DWM install
-```shell
-# Install DWM
-mkdir ~/suckless
-cd suckless
-git clone https://git.suckless.org/dwm
-git clone https://git.suckless.org/st
-git clone https://git.suckless.org/dmenu
-
-sudo pacman -Syu xorg-server xorg-xinit libx11 libxinerama libxft webkit2gtk
-# Use the following command for building
-make clean && make && sudo make install
-
-sudo pacman -Syu firefox
-
-```
