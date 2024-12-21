@@ -28,7 +28,7 @@ lsblk  # View all block devices and partitions
 cfdisk /dev/nvme0n1  # Replace nvme0n1 with your target disk
 
 # Create partitions:
-800M EFI System
+1G EFI System
 'xx'G Linux Filesystem # Replace xx with your desired root partition size
 lsblk
 
