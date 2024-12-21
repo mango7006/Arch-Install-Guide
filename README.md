@@ -51,7 +51,7 @@ pacstrap -K /mnt bluez bluez-utils base base-devel brightnessctl btop curl dosfs
  'intel-ucode' or 'amd-ucode'
 
 # optional GUI apps if you want
-pavucontrol blueman blueman-applet feh vlc nm-connection-editor network-manager-applet
+pavucontrol blueman feh vlc nm-connection-editor network-manager-applet
 ```
 
 ## Fstab and Chroot
