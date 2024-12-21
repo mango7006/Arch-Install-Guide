@@ -46,7 +46,7 @@ lsblk  # Verify mounted partitions
 ## Installing system
 ```shell
 # Install essential packages
-pacstrap -K /mnt bluez bluez-utils base base-devel brightnessctl btop curl dosfstools efibootmgr fastfetch ffmpeg fuse3 git grub linux linux-firmware linux-headers man man-db mtools networkmanager openssh os-prober pacman-contrib pipewire pipewire-audio pipewire-pulse reflector sudo ufw wireplumber vim yt-dlp
+pacstrap -K /mnt bluez bluez-utils base base-devel brightnessctl btop curl dosfstools efibootmgr fastfetch ffmpeg fuse3 git grub linux linux-firmware linux-headers man man-db mtools networkmanager openssh os-prober pacman-contrib pipewire pipewire-audio pipewire-pulse reflector sudo ufw wireplumber nvim yt-dlp
 # Add one of these depending on your CPU:
  'intel-ucode' or 'amd-ucode'
 
@@ -73,7 +73,7 @@ dd if=/dev/zero of=/swapfile bs=1M count=4096 status=progress
 chmod 600 /swapfile
 mkswap /swapfile
 swapon /swapfile # Active swapfile
-vim /etc/fstab
+nvim /etc/fstab
 # append at the bottom:
 /swapfile none swap defaults 0 0
 
@@ -82,7 +82,7 @@ useradd -m -g users -G wheel,storage,power,video,audio -s /bin/bash <username>  
 passwd <username>  # Set the password for the new user
 
 # Grant sudo privileges
-EDITOR=vim visudo 
+EDITOR=nvim visudo 
 # Uncomment the line:
 # %wheel ALL=(ALL:ALL) ALL
 
@@ -104,7 +104,7 @@ hwclock --systohc  # Sync hardware clock
 ## Locale Setup
 ```shell
 # Configure locale
-vim /etc/locale.gen
+nvim /etc/locale.gen
 # Uncomment the line:
 # en_US.UTF-8 UTF-8
 
@@ -153,7 +153,7 @@ sudo pacman -Syu  # Update system
 ## GRUB dualboot setup
 ```shell
 # Configure GRUB for dual-boot with Windows
-sudo vim /etc/default/grub
+sudo nvim /etc/default/grub
 # Uncomment the line:
 GRUB_DISABLE_OS_PROBER=false
 
@@ -180,7 +180,7 @@ makepkg -si
 sudo reflector --verbose -l 150 -n 20 -p http --sort rate --save /etc/pacman.d/mirrorlist
 # Reflector will sort mirrors by speed and update the mirrorlist.
 
-sudo vim /etc/pacman.conf
+sudo nvim /etc/pacman.conf
 # Add the line:
 'ILoveCandy'
 # Uncomment these lines:
@@ -191,7 +191,7 @@ sudo vim /etc/pacman.conf
 ## SSH
 ```shell
 # Secure SSH configuration
-sudo vim /etc/ssh/sshd_config
+sudo nvim /etc/ssh/sshd_config
 # Uncomment the line:
 # PermitRootLogin
 # Change its value to 'no'
