@@ -42,8 +42,8 @@ lsblk  # Verify mounted partitions
 ```
 
 ## Installing system
+Install essential packages
 ```shell
-# Install essential packages
 pacstrap -K /mnt base base-devel btop curl dosfstools efibootmgr fastfetch ffmpeg fuse3 git grub linux linux-firmware linux-headers man man-db mtools networkmanager openssh os-prober pacman-contrib reflector sudo ufw nvim intel-ucode amd-ucode
 ```
 
