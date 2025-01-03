@@ -117,7 +117,6 @@ grub-mkconfig -o /boot/grub/grub.cfg  # Update GRUB configuration
 
 ## Enable services on startup
 ```shell
-# Enable essential services
 systemctl enable NetworkManager.service && \ systemctl enable sshd.service && \ systemctl enable ufw.service && \ systemctl enable systemd-timesyncd.service
 ```
 
