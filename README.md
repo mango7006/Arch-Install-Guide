@@ -46,7 +46,8 @@ lsblk  # Verify mounted partitions
 ## Installing system
 ```shell
 # Install essential packages
-pacstrap -K /mnt bluez bluez-utils base base-devel brightnessctl btop curl dosfstools efibootmgr fastfetch ffmpeg fuse3 git grub linux linux-firmware linux-headers man man-db mtools networkmanager openssh os-prober pacman-contrib pipewire pipewire-audio pipewire-pulse reflector sudo ufw wireplumber nvim yt-dlp
+pacstrap -K /mnt bluez bluez-utils base base-devel brightnessctl btop curl dosfstools efibootmgr fastfetch ffmpeg fuse3 git grub linux linux-firmware linux-headers man man-db mtools networkmanager openssh os-prober pacman-contrib pipewire pipewire-audio pipewire-pulse reflector sudo ufw wireplumber neovim yt-dlp
+
 # Add one of these depending on your CPU:
  'intel-ucode' or 'amd-ucode'
 
