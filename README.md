@@ -46,13 +46,7 @@ lsblk  # Verify mounted partitions
 ## Installing system
 ```shell
 # Install essential packages
-pacstrap -K /mnt bluez bluez-utils base base-devel brightnessctl btop curl dosfstools efibootmgr fastfetch ffmpeg fuse3 git grub linux linux-firmware linux-headers man man-db mtools networkmanager openssh os-prober pacman-contrib pipewire pipewire-audio pipewire-pulse reflector sudo ufw wireplumber neovim yt-dlp
-
-# Add one of these depending on your CPU:
- 'intel-ucode' or 'amd-ucode'
-
-# optional GUI apps if you want
-pavucontrol blueman feh vlc nm-connection-editor network-manager-applet
+pacstrap -K /mnt base base-devel btop curl git neovim dosfstools efibootmgr fastfetch fuse3 grub linux linux-firmware linux-headers man man-db mtools networkmanager openssh os-prober pacman-contrib reflector sudo ufw intel-ucode zsh
 ```
 
 ## Fstab and Chroot
