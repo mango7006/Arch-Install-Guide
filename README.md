@@ -73,7 +73,7 @@ nvim /etc/fstab
 /swapfile none swap defaults 0 0
 
 # Create a new user
-useradd -m -g users -G wheel,storage,power,video,audio -s /bin/bash <username>  # Replace <username> with your desired username
+useradd -m -g users -G wheel,storage,power,video,audio -s /bin/zsh <username>  # Replace <username> with your desired username
 passwd <username>  # Set the password for the new user
 
 # Grant sudo privileges
