@@ -122,11 +122,12 @@ grub-mkconfig -o /boot/grub/grub.cfg  # Generate GRUB configuration
 ## Enable services on startup
 ```shell
 # Enable essential services
-systemctl enable bluetooth.service  # Enable Bluetooth
-systemctl enable NetworkManager.service  # Enable network management
-systemctl enable sshd.service  # Enable SSH server
-systemctl enable ufw.service  # Enable firewall
-systemctl enable systemd-timesyncd.service # Enable timesync
+systemctl enable bluetooth.service
+systemctl enable NetworkManager.service
+systemctl enable sshd.service
+systemctl enable ufw.service
+systemctl enable systemd-timesyncd.service
+systemctl enable sddm.service
 ```
 
 ## Unmount and shutdown
